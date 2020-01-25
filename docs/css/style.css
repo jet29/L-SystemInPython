@@ -8273,7 +8273,7 @@ a[data-toggle="collapse"] {
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s; 
-  font-size: 1.1rem;
+  /* font-size: 1.1rem;*/
   
 }
 
