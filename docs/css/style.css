@@ -8210,6 +8210,7 @@ h1, h2, h3, h4, h5,
   width: 100%; }
 
 #sidebar {
+
   min-width: 300px;
   max-width: 300px;
   background: #1d1919;
@@ -8286,3 +8287,7 @@ a[data-toggle="collapse"] {
 
 .footer p {
   color: rgba(255, 255, 255, 0.5); }
+
+#sticky{
+  position: fixed;
+}
