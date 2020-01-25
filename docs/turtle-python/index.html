@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-  	<title>L-System in Python</title>
+  	<title>L-System</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -10,44 +10,47 @@
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="./../css/style.css">
         <link rel="stylesheet" href="./../css/prettify.css">
-
+        
         <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   </head>
   <body>
-        
-
+		
 		<div class="wrapper d-flex align-items-stretch">
-            
-            <nav id="sidebar">
-				<div class="p-5 pt-5" id ="sticky">
-		  		<a href="#" class="img logo rounded-circle mb-5" style="background-image: url(./../images/logo.jpg);"></a>
-                    <ul class="list-unstyled components mb-5">
-
-                      <li>
-                          <a href="/" >Introducción</a>
-                      </li>
-                      
-                      
-
-                      <li class="active">
-                        <a href="/" >Turtle Python</a>
-                        <ul class="list-unstyled" id="homeSubmenu">
-                          <li>
-                              <a href="#importando">Importando</a>
-                          </li>
-                          <li>
-                              <a href="#probando">Probando</a>
-                          </li>
-                          <li>
-                              <a href="#lsystem">Creando un arbol con L-system</a>
-                          </li>
-                        </ul>
-                      </li>
-
-                    </ul>
+			<nav id="sidebar">
+                <div class="pt-5">
+                    <a href="#" class="img logo rounded-circle mb-5" style="background-image: url(./../images/logo.jpg);"></a>
+                    <h2 class="row justify-content-center" id="tutorial-title">Sistema L</h2>
                 </div>
-            </nav>
-            
+                
+				<div class="p-4" id="sticky">
+	        <ul class="list-unstyled components mb-5">
+            <li>
+                <a href="./../">Introducción</a>
+            </li>
+	          <li class="active">
+	            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Usando Turtle Graphics</a>
+	            <ul class="collapse list-unstyled" id="homeSubmenu">
+                <li>
+                    <a href="#lsystem">Integrando</a>
+                </li>
+                <li>
+                    <a href="#instalacion">Probando</a>
+                </li>
+                <li>
+                    <a href="#python">Creando un arbol</a>
+                </li>
+	            </ul>
+	          </li>
+	          <li>
+              <a href="#">Finalizando</a>
+	          </li>
+	          <li>
+              <a href="#">Otras ideas</a>
+	          </li>
+	        </ul>
+
+	      </div>
+    	</nav>
 
         <!-- Page Content  -->
       <div id="content" class="p-4 p-md-5">
@@ -74,20 +77,17 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Ingles</a>
                 </li>
-
-
               </ul>
             </div>
           </div>
         </nav>
 
-        <!-- Que son los sistemas L -->
-        <h2 class="mb-4" id="importando">Importando</h2>
+        <h2 class="mb-4" id="lsystem">Integrando</h2>
         <p>Bueno marico los sistemas L son una webonada toda arrecha nojoda vale tu eres loco ramon</p>
 
         <hr>
 
-        <h2 class="mb-4" id="probando">Probando</h2>
+        <h2 class="mb-4" id="instalacion">Probando</h2>
         <pre class="prettyprint lang-py">
             # TurtleTest.py
 
@@ -193,7 +193,7 @@
 
         <hr>
 
-        <h2 class="mb-4" id="lsystem">Creando un arbol con L-system</h2>
+        <h2 class="mb-4" id="python">Creando un arbol</h2>
         <p>Bueno marico Python es una webonada toda arrecha nojoda vale tu eres loco ramon</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Urna cursus eget nunc scelerisque viverra mauris. Rutrum tellus pellentesque eu tincidunt. Turpis tincidunt id aliquet risus feugiat in ante metus dictum. Suspendisse in est ante in nibh mauris. Ullamcorper morbi tincidunt ornare massa eget. Pellentesque sit amet porttitor eget dolor morbi non arcu. Velit ut tortor pretium viverra suspendisse potenti nullam ac tortor. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum dui. Viverra accumsan in nisl nisi scelerisque eu.</p>
 
@@ -206,11 +206,12 @@
         <p>Tempus egestas sed sed risus pretium. Velit aliquet sagittis id consectetur purus ut faucibus. Ut lectus arcu bibendum at. Massa vitae tortor condimentum lacinia quis. Ultrices mi tempus imperdiet nulla malesuada pellentesque elit eget. Tellus cras adipiscing enim eu turpis egestas. Eros donec ac odio tempor orci dapibus ultrices. Enim lobortis scelerisque fermentum dui faucibus in ornare. Eu scelerisque felis imperdiet proin fermentum. Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus. Tellus in metus vulputate eu. Ornare quam viverra orci sagittis eu. Ut tristique et egestas quis. Phasellus vestibulum lorem sed risus ultricies. Tempor orci dapibus ultrices in iaculis. Viverra adipiscing at in tellus integer. Eleifend mi in nulla posuere sollicitudin aliquam.</p>
 
         </div>
-	</div>
+      </div>
+		</div>
 
-    <script src="js/jquery.min.js"></script>
-    <script src="js/popper.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="./../js/jquery.min.js"></script>
+    <script src="./../js/popper.js"></script>
+    <script src="./../js/bootstrap.min.js"></script>
+    <script src="./../js/main.js"></script>
   </body>
 </html>

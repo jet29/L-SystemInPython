@@ -8274,8 +8274,6 @@ a[data-toggle="collapse"] {
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s; 
-  /* font-size: 1.1rem;*/
-  
 }
 
 .btn.btn-primary {
@@ -8289,5 +8287,11 @@ a[data-toggle="collapse"] {
   color: rgba(255, 255, 255, 0.5); }
 
 #sticky{
-  position: fixed;
+  position: sticky;
+  top: 0;
+}
+
+#tutorial-title{
+  color: #c6d5e4;
+  font-family: cursive;
 }
