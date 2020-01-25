@@ -8221,8 +8221,8 @@ h1, h2, h3, h4, h5,
     margin-left: -300px; }
   #sidebar .logo {
     display: block;
-    width: 120px;
-    height: 120px;
+    width: 180px;
+    height: 180px;
     margin: 0 auto; }
     #sidebar .logo span {
       display: block; }
@@ -8240,10 +8240,10 @@ h1, h2, h3, h4, h5,
       color: rgba(255, 255, 255, 0.8);
       border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
       #sidebar ul li a:hover {
-        color: #f8b739; }
+        color: #5fabf1; }
     #sidebar ul li.active > a {
       background: transparent;
-      color: #f8b739; }
+      color: #5fabf1; }
   @media (max-width: 991.98px) {
     #sidebar {
       margin-left: -300px; }
@@ -8278,11 +8278,11 @@ a[data-toggle="collapse"] {
 }
 
 .btn.btn-primary {
-  background: #f8b739;
-  border-color: #f8b739; }
+  background: #5fabf1;
+  border-color: #5fabf1; }
   .btn.btn-primary:hover, .btn.btn-primary:focus {
-    background: #f8b739 !important;
-    border-color: #f8b739 !important; }
+    background: #5fabf1 !important;
+    border-color: #5fabf1 !important; }
 
 .footer p {
   color: rgba(255, 255, 255, 0.5); }
