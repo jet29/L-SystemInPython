@@ -1,14 +1,17 @@
 <!doctype html>
 <html lang="en">
   <head>
-  	<title>Sidebar 01</title>
+  	<title>L-System in Python</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
 		
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/prettify.css">
+
+        <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   </head>
   <body>
 		
@@ -18,49 +21,28 @@
 		  		<a href="#" class="img logo rounded-circle mb-5" style="background-image: url(images/logo.jpg);"></a>
 	        <ul class="list-unstyled components mb-5">
 	          <li class="active">
-	            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
-	            <ul class="collapse list-unstyled" id="homeSubmenu">
+	            <a href="/" >Introducción</a>
+	            <ul class="list-unstyled" id="homeSubmenu">
                 <li>
-                    <a href="#">Home 1</a>
+                    <a href="#lsystem">¿Qué son los sistemas L?</a>
                 </li>
                 <li>
-                    <a href="#">Home 2</a>
+                    <a href="#instalacion">Instalación</a>
                 </li>
                 <li>
-                    <a href="#">Home 3</a>
+                    <a href="#python">¿Por qué python?</a>
                 </li>
 	            </ul>
-	          </li>
+              </li>
+              
+              
 	          <li>
-	              <a href="#">About</a>
-	          </li>
-	          <li>
-              <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
-              <ul class="collapse list-unstyled" id="pageSubmenu">
-                <li>
-                    <a href="#">Page 1</a>
-                </li>
-                <li>
-                    <a href="#">Page 2</a>
-                </li>
-                <li>
-                    <a href="#">Page 3</a>
-                </li>
-              </ul>
-	          </li>
-	          <li>
-              <a href="#">Portfolio</a>
-	          </li>
-	          <li>
-              <a href="#">Contact</a>
-	          </li>
+	              <a href="/turtle-python/">Usando Turtle Python</a>
+              </li>
+              
 	        </ul>
 
-	        <div class="footer">
-	        	<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
-						  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-	        </div>
+	        
 
 	      </div>
     	</nav>
@@ -98,10 +80,127 @@
           </div>
         </nav>
 
-        <h2 class="mb-4">Sidebar #01</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      </div>
+        <!-- Que son los sistemas L -->
+        <h1 class="mb-4" id="lsystem">¿Qué son los sistemas L?</h1>
+        <p>Bueno marico los sistemas L son una webonada toda arrecha nojoda vale tu eres loco ramon</p>
+
+        <h1 class="mb-4" id="instalacion">Instalación</h1>
+        <pre class="prettyprint lang-py">
+            # TurtleTest.py
+
+            '''
+            axiom: F
+            rules: F -> C0FF-[C1-F+F+F]+[C2+F-F-F]
+            con F = forward
+            C0 = color tallo
+            - = rotate -radian(25)
+            + = rotate +radian(25)
+            [ = save the state
+            ] = load the state
+            '''
+            from turtle import *
+            from tkinter import *
+            import turtle
+
+            #Set up the screen
+            wn = turtle.Screen()
+            wn.bgcolor("white")
+            wn.tracer(3)
+
+            pivot = turtle.Turtle()
+            pivot.color("brown")
+            pivot.speed(0)
+            pivot.up()
+            pivot.setposition(0,-300)
+            pivot.down()
+            pivot.left(90)
+
+            leng = 150
+            penlen= 3
+            axiom = 'F'
+            s = ""
+            s += axiom
+            pivot.pensize(penlen)
+            stack = []
+            rules = {'F':"C0FF-[C1-F+F+F]+[C2+F-F-F]"}
+            stack = []
+
+            def generate():
+                newString = ""
+                global s
+
+                #making the devivations
+                
+                for c in s:
+                
+                    if c == 'F':
+                        newString += rules['F']
+                    else:
+                        newString += c
+                        
+                        
+                s = newString
+
+            def write():
+                global leng
+                global s
+                global penlen
+                penlen *= .5
+                leng *= .5
+
+                #making the devivations
+                
+                for c in s:
+                
+                    if c == 'F':
+                        pivot.forward(leng)
+                    elif c == '-':
+                        pivot.left(25)
+                    elif c == '+':
+                        pivot.right(25)
+                    elif c == '[':
+                        v1 = [pivot.xcor(),pivot.ycor(),pivot.heading()]
+                        stack.append(v1)
+                    elif c == ']':
+                        v1 = stack.pop()
+                        pivot.up()
+                        pivot.setposition(v1[0],v1[1])
+                        pivot.setheading(v1[2])
+                        pivot.down()
+                    elif c == '0':
+                        pivot.color("brown")
+                    elif c == '1':
+                        pivot.color("green")
+                    elif c == '2':
+                        pivot.color("green")
+
+
+            def resetPosition():
+                pivot.setposition(0,-300)
+
+
+            for i in range(7):
+                pivot.pensize(penlen)
+                generate()
+                resetPosition()
+                write()
+                print(s)
+                print("\n")
+        </pre>
+
+        <h1 class="mb-4" id="python">¿Por qué Python?</h1>
+        <p>Bueno marico Python es una webonada toda arrecha nojoda vale tu eres loco ramon</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Urna cursus eget nunc scelerisque viverra mauris. Rutrum tellus pellentesque eu tincidunt. Turpis tincidunt id aliquet risus feugiat in ante metus dictum. Suspendisse in est ante in nibh mauris. Ullamcorper morbi tincidunt ornare massa eget. Pellentesque sit amet porttitor eget dolor morbi non arcu. Velit ut tortor pretium viverra suspendisse potenti nullam ac tortor. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum dui. Viverra accumsan in nisl nisi scelerisque eu.</p>
+
+        <p>>Mattis aliquam faucibus purus in massa tempor. Sit amet venenatis urna cursus eget. Aenean vel elit scelerisque mauris pellentesque pulvinar. Vulputate dignissim suspendisse in est ante in nibh mauris. Posuere ac ut consequat semper viverra. Sit amet aliquam id diam maecenas ultricies. Mattis ullamcorper velit sed ullamcorper morbi tincidunt ornare. Sed cras ornare arcu dui vivamus arcu. Tristique magna sit amet purus gravida quis blandit. Dictum at tempor commodo ullamcorper a lacus vestibulum. Justo eget magna fermentum iaculis eu non diam.</p>
+        
+        <p>Eu scelerisque felis imperdiet proin fermentum leo vel orci. Viverra ipsum nunc aliquet bibendum enim facilisis gravida neque convallis. Nisi est sit amet facilisis magna. Commodo odio aenean sed adipiscing. Quam vulputate dignissim suspendisse in est. Sit amet volutpat consequat mauris. Nullam eget felis eget nunc lobortis mattis. Quis ipsum suspendisse ultrices gravida dictum. Ornare aenean euismod elementum nisi quis. Morbi tristique senectus et netus et malesuada. Nulla posuere sollicitudin aliquam ultrices sagittis orci a scelerisque. Risus sed vulputate odio ut enim.</p>
+        
+        <p>Scelerisque felis imperdiet proin fermentum. Eget sit amet tellus cras. Viverra maecenas accumsan lacus vel facilisis volutpat est velit egestas. Convallis aenean et tortor at. Consequat nisl vel pretium lectus quam id leo in. Elit scelerisque mauris pellentesque pulvinar pellentesque habitant. Amet luctus venenatis lectus magna. Feugiat vivamus at augue eget arcu dictum varius duis at. Quis viverra nibh cras pulvinar mattis nunc sed blandit libero. Est lorem ipsum dolor sit amet consectetur. At quis risus sed vulputate. Et pharetra pharetra massa massa ultricies. Rhoncus mattis rhoncus urna neque viverra justo nec. Commodo viverra maecenas accumsan lacus vel facilisis volutpat est velit. Tempus egestas sed sed risus pretium quam vulputate. Morbi blandit cursus risus at ultrices mi.</p>
+        
+        <p>Tempus egestas sed sed risus pretium. Velit aliquet sagittis id consectetur purus ut faucibus. Ut lectus arcu bibendum at. Massa vitae tortor condimentum lacinia quis. Ultrices mi tempus imperdiet nulla malesuada pellentesque elit eget. Tellus cras adipiscing enim eu turpis egestas. Eros donec ac odio tempor orci dapibus ultrices. Enim lobortis scelerisque fermentum dui faucibus in ornare. Eu scelerisque felis imperdiet proin fermentum. Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus. Tellus in metus vulputate eu. Ornare quam viverra orci sagittis eu. Ut tristique et egestas quis. Phasellus vestibulum lorem sed risus ultricies. Tempor orci dapibus ultrices in iaculis. Viverra adipiscing at in tellus integer. Eleifend mi in nulla posuere sollicitudin aliquam.</p>
+
+    </div>
 		</div>
 
     <script src="js/jquery.min.js"></script>
